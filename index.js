@@ -65,9 +65,6 @@ function setMessage(mes, color) {
   message.innerHTML = mes;
   message.style.color = color;
 }
-
-//hint messaage
-setInterval(hintMessage, 5000);
 function hintMessage(guess) {
   if (guess > winningnumber) {
     hint.innerHTML = "Hint: Your guess is too high";
