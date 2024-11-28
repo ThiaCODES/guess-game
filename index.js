@@ -7,9 +7,9 @@ const minNumber = document.getElementById("min");
 const hint = document.querySelector(".hint");
 
 let min = 1;
-max = 10;
+max = 20;
 winningnumber = getRandomNumber(min, max);
-guessAttempt = 3;
+guessAttempt = 5;
 maxNumber.innerHTML = max;
 minNumber.innerHTML = min;
 
@@ -30,13 +30,15 @@ guessBtn.addEventListener("click", () => {
     if (guess === winningnumber) {
       guessBtn.style.background = "green";
       gameover(true, `Your guess is correct. <br>Congratulations! You won. `);
+      hint.innerHTML = " ";
     } else {
       guessAttempt -= 1;
 
       if (guessAttempt <= 0) {
         gameover(
           false,
-          `Game Over! <br>The correct number is ${winningnumber}`
+          `Game Over! <br>The correct number is ${winningnumber}`,
+          (hint.innerHTML = " ")
         );
       } else {
         guessBtn.style.background = "red";
